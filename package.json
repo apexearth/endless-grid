@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha **/*.spec.js"
   },
+  "repository": "https://github.com/apexearth/endless-grid",
   "author": "Christopher Jacobs",
   "license": "ISC",
   "devDependencies": {
