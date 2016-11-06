@@ -1,0 +1,15 @@
+{
+  "name": "endless-grid",
+  "version": "0.1.0",
+  "description": "An endless 2D grid.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha **/*.spec.js"
+  },
+  "author": "Christopher Jacobs",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
