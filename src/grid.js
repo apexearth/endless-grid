@@ -5,10 +5,10 @@ module.exports = Grid;
 function Grid() {
     var grid = {};
     var minX, maxX, minY, maxY;
-    Object.defineProperty(this, 'minX', {get: () => minX})
-    Object.defineProperty(this, 'minY', {get: () => minY})
-    Object.defineProperty(this, 'maxX', {get: () => maxX})
-    Object.defineProperty(this, 'maxY', {get: () => maxY})
+    Object.defineProperty(this, 'minX', {get: () => minX});
+    Object.defineProperty(this, 'minY', {get: () => minY});
+    Object.defineProperty(this, 'maxX', {get: () => maxX});
+    Object.defineProperty(this, 'maxY', {get: () => maxY});
 
     this.create = function (x, y) {
         minX = minX < x ? minX : x;
@@ -32,6 +32,10 @@ function Grid() {
             }
         }
         return adjacent;
+    };
+
+    this.areAdjacent = function (blockA, blockB) {
+        return blockA.isAdjacent(blockB);
     }
 }
 

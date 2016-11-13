@@ -76,5 +76,18 @@ describe('grid', () => {
         expect(`${adjacent[i].x},${adjacent[i++].y}`).to.equal('0,2');
         expect(`${adjacent[i].x},${adjacent[i++].y}`).to.equal('1,2');
         expect(`${adjacent[i].x},${adjacent[i++].y}`).to.equal('2,2');
-    })
+    });
+    it('.areAdjacent()', function () {
+        let grid = new Grid();
+        expect(grid.areAdjacent(grid.get(0, 0), grid.get(0, 0))).to.equal(false);
+        expect(grid.areAdjacent(grid.get(0, 1), grid.get(0, 0))).to.equal(true);
+        expect(grid.areAdjacent(grid.get(0, 2), grid.get(0, 0))).to.equal(false);
+        expect(grid.areAdjacent(grid.get(0, -1), grid.get(0, 0))).to.equal(true);
+        expect(grid.areAdjacent(grid.get(0, -2), grid.get(0, 0))).to.equal(false);
+        expect(grid.areAdjacent(grid.get(0, 0), grid.get(0, 0))).to.equal(false);
+        expect(grid.areAdjacent(grid.get(1, 0), grid.get(0, 0))).to.equal(true);
+        expect(grid.areAdjacent(grid.get(2, 0), grid.get(0, 0))).to.equal(false);
+        expect(grid.areAdjacent(grid.get(-1, 0), grid.get(0, 0))).to.equal(true);
+        expect(grid.areAdjacent(grid.get(-2, 0), grid.get(0, 0))).to.equal(false);
+    });
 });
