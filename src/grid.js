@@ -33,6 +33,15 @@ function Grid() {
         }
         return adjacent;
     };
+    this.getRange = function (x1, y1, x2, y2) {
+        var blocks = [];
+        for (var y = y1; y <= y2; y++) {
+            for (var x = x1; x <= x2; x++) {
+                blocks.push(this.get(x, y));
+            }
+        }
+        return blocks;
+    }
 
     this.areAdjacent = function (blockA, blockB) {
         return blockA.isAdjacent(blockB);

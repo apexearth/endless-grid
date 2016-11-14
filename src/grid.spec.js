@@ -77,6 +77,27 @@ describe('grid', () => {
         expect(`${adjacent[i].x},${adjacent[i++].y}`).to.equal('1,2');
         expect(`${adjacent[i].x},${adjacent[i++].y}`).to.equal('2,2');
     });
+    it('.getRange()', function () {
+        let grid = new Grid();
+        var blocks = grid.getRange(-2, -2, 10, 10);
+        var expectX = -2;
+        var expectY = -2;
+
+        for (var i = 0; i < blocks.length; i++) {
+            expect(blocks[i].x).to.equal(expectX);
+            expect(blocks[i].y).to.equal(expectY);
+            if (expectX++ === 10) {
+                expectX = -2;
+                expectY++;
+            }
+        }
+
+        blocks = grid.getRange(0, 0, 0, 0);
+        expect(blocks.length).to.equal(1);
+
+        blocks = grid.getRange(0, 0, -1, 0);
+        expect(blocks.length).to.equal(0);
+    });
     it('.areAdjacent()', function () {
         let grid = new Grid();
         expect(grid.areAdjacent(grid.get(0, 0), grid.get(0, 0))).to.equal(false);
